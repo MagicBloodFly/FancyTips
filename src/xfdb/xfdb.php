@@ -13,10 +13,11 @@ use onebone\economyapi\EconomyAPI;
 use pocketmine\event\player\PlayerJoinEvent;
 use RVIP\RVIP;
  
-class xfdb extends PluginBase{
+class xfdb extends PluginBase implements Listener{
 
  public function onEnable(){
      $this->getServer()->getScheduler()->scheduleRepeatingTask(new CallbackTask([$this,"senddb"]), 9);
+	 $this->getServer()->getPluginManager()->registerEvents($this, $this);
 			$this->getLogger()->info("§e底部插件作者:Magic雪飞>>搭配插件:RVIP or WarnPoint.");
 			$this->vip = RVIP::$RVIP;
 	
@@ -26,7 +27,7 @@ class xfdb extends PluginBase{
 	}
 	public function onJoin(PlayerJoinEvent $event) {
 $player = $event->getPlayer();
-$player->sendMessage("§b===欢迎使用XF底部显示===");
+$player->sendMessage("§b===欢迎使用XF底部显示===\n§a目前支持显示RVIP and WarnPoint\n§b================");
 return true;
  }
   	public function senddb(){
