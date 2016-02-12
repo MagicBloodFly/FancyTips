@@ -17,16 +17,16 @@ class xfdb extends PluginBase{
 
  public function onEnable(){
      $this->getServer()->getScheduler()->scheduleRepeatingTask(new CallbackTask([$this,"senddb"]), 9);
-			$this->getLogger()->info("§e底部插件作者:Magic雪飞.");
+			$this->getLogger()->info("§e底部插件作者:Magic雪飞>>搭配插件:RVIP or WarnPoint.");
 			$this->vip = RVIP::$RVIP;
 	
  }
 	public function onLoad(){
-  $this->getLogger()->info("§b=给小学生的一封信=\n§c本插件完全免费,倒卖必究\n§c版权请勿随意乱改\n§b=========");
+  $this->getLogger()->info("§b=给小学生的一封信=\n§c         本插件完全免费,倒卖必究\n         §c版权请勿随意乱改\n         §b=========");
 	}
 	public function onJoin(PlayerJoinEvent $event) {
 $player = $event->getPlayer();
-$player->sendMessage("§b=============\n§a本服务器装载了任务插件,请腐竹每日修改配置文件,\n=============");
+$player->sendMessage("§b===欢迎使用XF底部显示===");
  }
   	public function senddb(){
    	$zaixian = count($this->getServer()->getOnlinePlayers());
