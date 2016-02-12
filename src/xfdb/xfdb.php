@@ -27,6 +27,7 @@ class xfdb extends PluginBase{
 	public function onJoin(PlayerJoinEvent $event) {
 $player = $event->getPlayer();
 $player->sendMessage("§b===欢迎使用XF底部显示===");
+return true;
  }
   	public function senddb(){
    	$zaixian = count($this->getServer()->getOnlinePlayers());
