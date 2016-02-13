@@ -7,6 +7,9 @@ use pocketmine\plugin\Plugin;
 use pocketmine\event\Listener;
 use pocketmine\Player;
 use pocketmine\Server;
+use pocketmine\level\Position;
+use onebone\economyland\EconomyLand;
+use pocketmine\level\Level;
 use pocketmine\utils\Utils;
 use pocketmine\command\CommandSender;
 use pocketmine\item\Item;
@@ -65,13 +68,35 @@ $ms="创造"
 $point = $this->vip->Point("get",$player->getName());//点卷
 $ts = $this->vip->Day("get",$player->getName());//天数
  $Prefix = $this->vip->Prefix("get",$player->getName());//称号
- $player->sendPopup("|§a繁星玩家:§b".$zaixian." §e所在星域:§6".$world." §3目前血量:§c".$xue."§f|\n|§e玩家名字:§e".$pn." §dX,Y坐标:§e".$sx." ".$sy."§f|");
+ 
+ 
+ /* 
+ *Print is result.
+ */
+ $this->land = EconomyLand::getInstance();
+ $res = $this->land->checkOverlap($x,$x+1,$z,$z+1,$player->getLevel()->getFolderName);
+ if($res!==false){
+	 $print = '';
+ } else {
+	 $info = $this->landapi->getLandInfo($land);
+	 $print = '领地id：'.$land.'|领主：'.$info['owner'];
+ }
+ //end
+ 
+ 
+ $player->sendPopup("|§a繁星玩家:§b".$zaixian." §e所在星域:§6".$world." §3目前血量:§c".$xue."§f|\n|§e玩家名字:§e".$pn." §dX,Y坐标:§e".$sx." ".$sy."§f|".$print);
 $player->sendTip("                                                                             >>>>>§a点卷§b:".$point."\n                                                                             >>>>>§e等级§d:".$Prefix."\n                                                                             >>>>>§b金钱§6:".$m."\n                                                                             >>>>>§a模式§e:".$ms."\n                                                                             >>>>>§eVIP天数§a:".$ts."\n                                                                             >>§c购买点卷请联系星炎");
 
 }
     
 }
 } 
+
+
+
+
+
+
 }
 
 
