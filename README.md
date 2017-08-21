@@ -1,4 +1,5 @@
-# FunWorldDB
-底部插件可以带来很多便利，持续更新显示..
-目前支持插件:RVIP,PointCard
-以后逐渐支持结婚插件和公会插件
+# FancyBotton
+基于 PocketMine 的插件
+非常实用，可以带来许多便利
+已经全面重写，美化修改
+必须搭配RVIP插件和经济核心插件
