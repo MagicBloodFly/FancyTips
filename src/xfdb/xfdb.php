@@ -28,7 +28,7 @@ class xfdb extends PluginBase implements Listener{
 
  public function onEnable(){
 
-     $this->getServer()->getScheduler()->scheduleRepeatingTask(new CallbackTask([$this,"senddb"]),20);
+     $this->getScheduler()->scheduleRepeatingTask(new CallbackTask([$this,"senddb"]),20);
 
 	 $this->getServer()->getPluginManager()->registerEvents($this, $this);
 
