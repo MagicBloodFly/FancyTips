@@ -28,9 +28,11 @@ class xfdb extends PluginBase implements Listener{
 
  public function onEnable(){
 
+	  $this->getServer()->getPluginManager()->registerEvents($this, $this);
+	 
      $this->getScheduler()->scheduleRepeatingTask(new CallbackTask([$this,"senddb"]),20);
 
-	 $this->getServer()->getPluginManager()->registerEvents($this, $this);
+	
 
 			$this->getLogger()->info("§e底部插件作者:Magic雪飞  >>  来自Fancy团队");
 
