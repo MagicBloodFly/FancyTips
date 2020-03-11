@@ -5,4 +5,4 @@
 
 已经全面重写，美化修改 Has been fully rewritten, landscaping modifications
 
-必须搭配RVIP插件和经济核心插件 You must match the RVIP plug-in and the economic core plug-in
+必须搭配Fancy CKVIPs插件和Economic插件
