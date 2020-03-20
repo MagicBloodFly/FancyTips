@@ -43,7 +43,7 @@ $name = MagicBloodFLY;
 
 $git = github.com/MagicBloodFLY;
 
-return ture;
+return true;
 }
 
 ```
